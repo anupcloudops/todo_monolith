@@ -1,6 +1,7 @@
 name: read file
 on:
-  workflow_dispatch
+  workflow_dispatch:
+   
 jobs:
   fileread:
     runs-on: self-hosted
@@ -9,3 +10,8 @@ jobs:
         uses: actions/checkout@v4
       - name: read file
         run: cat azure-pipelines.yml
+      - name: context variable
+        run: |
+          echo "this work flow is ${{ github.actor }}"
+          echo "this work flow is ${{ github.repository }}"
+          echo "this work flow is ${{ github.ref_name }}"
