@@ -7,4 +7,10 @@ jobs:
       - name: hello-step
         run: |
           echo "JAI JAGNNATH"
-          echo " JAI RADHA MAA"
+          echo "JAI RADHA MAA"
+  TELLO:
+    runs-on: self-hosted
+    needs: hello
+    steps:
+      - name: test
+        run: echo "test"
