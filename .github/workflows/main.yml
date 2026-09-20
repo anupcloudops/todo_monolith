@@ -1,18 +1,11 @@
-name:
+name: read file
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: select env
-        required: true
-        default: dev
-        type: choice
-        options:
-          - dev
-          - prod
+  workflow_dispatch
 jobs:
-  input-demo:
+  fileread:
     runs-on: self-hosted
     steps:
-      - name: deploy
-        run: echo " deploied at ${{ inputs.environment }}"
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: read file
+        run: cat azure-pipelines.yml
