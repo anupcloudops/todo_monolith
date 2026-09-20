@@ -15,3 +15,5 @@ jobs:
           echo "this work flow is ${{ github.actor }}"
           echo "this work flow is ${{ github.repository }}"
           echo "this work flow is ${{ github.ref_name }}"
+          echo "this work flow is ${{ tojson(github) }}"
+          echo "$GITHUB_SHA"
