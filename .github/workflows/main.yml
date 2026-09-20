@@ -1,19 +1,17 @@
-name: Hello World
-on: workflow_dispatch
+name:
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: select env
+        required: true
+        default: dev
+        options:
+          -dev
+          -prod
 jobs:
-  hello:
+  input-demo:
     runs-on: self-hosted
     steps:
-      - name: hello-step
-        uses: actions/checkout@v4
-      - name: hello-stepee
-        run: |
-          echo "JAI JAGNNATH"
-          echo "JAI RADHA MAA"
-  TELLO:
-    runs-on: self-hosted
-    steps:
-      - name: hello-steped
-        uses: actions/checkout@v4
-      - name: hello-steprr
-        run: cat azure-pipelines.yml
+      -name: deploy
+       run: echo " deploy"
