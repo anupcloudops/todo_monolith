@@ -13,4 +13,4 @@ jobs:
     needs: hello
     steps:
       - name: test
-        run: echo "my repo variable: ${{ vars.test }}"
+        run: echo "my repo variable: ${{ var.test }}"
