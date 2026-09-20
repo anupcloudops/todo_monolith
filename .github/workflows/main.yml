@@ -13,5 +13,5 @@ jobs:
   input-demo:
     runs-on: self-hosted
     steps:
-      -name: deploy
-       run: echo " deploy"
+      - name: deploy
+        run: echo " deploy"
