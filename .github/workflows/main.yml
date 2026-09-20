@@ -4,6 +4,7 @@ jobs:
   hello:
     runs-on: self-hosted
     steps:
-      - run: |
+      - name: hello-step
+        run: |
           echo "JAI JAGNNATH"
           echo " JAI RADHA MAA"
