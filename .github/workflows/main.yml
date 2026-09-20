@@ -6,13 +6,12 @@ jobs:
     steps:
       - name: hello-step
         uses: actions/checkout@v4
-      - name: tested
-        run: cat azure-pipelines.yml
         run: |
           echo "JAI JAGNNATH"
           echo "JAI RADHA MAA"
   TELLO:
     runs-on: self-hosted
     steps:
-      - name: test
-        run: echo "my repo variable ${{ vars.test }}"
+      - name: hello-steped
+        uses: actions/checkout@v4
+        run: cat azure-pipelines.yml
