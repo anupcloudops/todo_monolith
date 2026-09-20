@@ -10,7 +10,6 @@ jobs:
           echo "JAI RADHA MAA"
   TELLO:
     runs-on: self-hosted
-    needs: hello
     steps:
       - name: test
         run: echo "my repo variable ${{ vars.test }}"
