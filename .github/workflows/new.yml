@@ -32,7 +32,7 @@ jobs:
       - name: install docker
         run: docker --version
       - name: EVENT test
-        if: github.event_name == 'workflow.dispatch'
+        if: github.event_name == 'workflow_dispatch'
         run: |
           echo "event is ${{ github.event_name }}"
           docker build -t todo:v1 .
