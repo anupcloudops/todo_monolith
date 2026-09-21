@@ -11,11 +11,13 @@ on:
           - dev
           - prod
 env:
-  APP_ENV: "dev"
+  APP_ENV: "TEST"
 jobs:
   hello:
     outputs:
       version: ${{ steps.step2.outputs.version }}
+    env:
+      APP_ENV: "UA"
     runs-on: self-hosted
     steps:
       - name: hello-step
