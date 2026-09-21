@@ -21,6 +21,7 @@ jobs:
       - name: hello-step
         run: echo "JAI JAGNNATH"
       - name: variable check
+        if: success()
         id: step2
         run: |
           echo "${{ github.actor }}"
