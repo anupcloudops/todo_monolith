@@ -19,13 +19,19 @@ jobs:
       - name: hello-step
         run: echo "JAI JAGNNATH"
       - name: variable check
-        run: echo "${{ github.actor }}"
+        id: step2
+        run: |
+          echo "${{ github.actor }}"
+          echo "version=0.0.4" >> $GITHUB_OUTPUT
       - name: code Checkout
         uses: actions/checkout@v4
       - name: print environment
         run: echo "current env is , ${{inputs.environment}}"
       - name: hello-step
-        run: echo "$APP_ENV"
+        run: |
+          echo "version is, ${{ steps.step2.outputs.version }}" 
+          echo "$APP_ENV $GITHUB_OUTPUT"
+
       - name: EVENT Checkout
         if: github.event_name == 'push'
         run: echo "event is ${{ github.event_name }}"
@@ -35,8 +41,8 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         run: |
           echo "event is ${{ github.event_name }}"
-          docker build -t todo:v1 .
           docker images
+    
         
 
        
