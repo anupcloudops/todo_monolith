@@ -10,7 +10,7 @@ jobs:
       - name: variable check
         run: echo "${{ github.actor }}"
       - name: code Checkout
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: install node Node.js
         uses: actions/setup-node@v4
         with:
