@@ -30,12 +30,7 @@ jobs:
         if: github.event_name == 'push'
         run: echo "event is ${{ github.event_name }}"
       - name: install docker
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io
-          sudo systemctl enable docker
-          sudo systemctl start docker
-          docker --version
+        run: docker --version
       - name: EVENT Checkout
         if: github.event_name == 'workflow.dispatch'
         run: |
