@@ -1,6 +1,15 @@
 name: test pipeline
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: chose environment
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - prod
 jobs:
   hello:
     runs-on: self-hosted
@@ -11,11 +20,6 @@ jobs:
         run: echo "${{ github.actor }}"
       - name: code Checkout
         uses: actions/checkout@v4
-      - name: install node Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 16
-      - name: run node commands
-        run: |
-          npm install
-          npm run build
+      - name: print environment
+        run: echo "current env is , ${{inputs.environment}}"
+       
