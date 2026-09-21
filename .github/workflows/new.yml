@@ -8,4 +8,4 @@ jobs:
       - name: hello-step
         run: echo "JAI JAGNNATH"
       - name: variable check
-        run: echo "${{ git.actor}}"
+        run: echo "${{ github.actor }}"
