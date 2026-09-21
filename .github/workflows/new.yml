@@ -44,7 +44,6 @@ jobs:
         run: |
           echo "event is ${{ github.event_name }}"
           docker images
-jobs:
   deploy:
     runs-on: self-hosted
     steps:
