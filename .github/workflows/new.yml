@@ -26,4 +26,8 @@ jobs:
         run: echo "current env is , ${{inputs.environment}}"
       - name: hello-step
         run: echo "$APP_ENV"
+      - name: EVENT Checkout
+        if: github.event_name == 'push'
+        run: echo "event is ${{ github.event_name }}"
+
        
