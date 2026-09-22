@@ -1,31 +1,22 @@
-name: read file
-
+name: pipeline
 on:
   workflow_dispatch:
-
+    inputs:
+      environment:
+        description: select env
+        required: true
+        default: dev
+        type: chose
+        options:
+          - dev
+          - prod
 permissions:
   contents: read
-
 jobs:
-  fileread:
+  hello:
     runs-on: self-hosted
-
-    steps:
-      - name: Checkout code
+    steps: 
+      - name: Checkout-file
         uses: actions/checkout@v4
-
-      - name: Install Node.js 16
-        uses: actions/setup-node@v4
-        with:
-          node-version: '16'
-
-      - name: Run npm commands
-        run: |
-          npm install
-          npm run build
-
-      - name: Publish artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: todo-app-build
-          path: build/
+      - name: Read-file
+        run: cat ./src/App.js
